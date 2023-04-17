@@ -9,6 +9,7 @@ To install the extension, follow these steps:
 - Download the latest release from the GitHub repository.
 - You can easily compile the project using the following command. This command creates a .jar file under the `@jar` folder.
     ```
+    gradle wrapper --gradle-version=5.1.1 # To ensure compatibility with openJDK
     ./gradlew jar
     ```
 - Open Burp Suite and go to the `Extender` tab.
