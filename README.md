@@ -23,6 +23,9 @@ To use the extension, follow these steps:
 - Open the extension and paste the URLs into the input field.
 - Click the `Verify` button to extract the web addresses and preview them in the list.
 - Select the appropriate scope status for each web address by clicking the (`Full Scope`|`Out of scope`|`Ignore`) buttons.
+    - `Full Scope`: Adds all subdomain records of a domain to the Burp Suite scope settings using the '\*' character (in the form "*.target.com").
+    - `Out of Scope`: Adds the selected address to the out of scope section of the Burp Suite scope settings.
+    - `Ignore`: Ignores the selected record. Does not add to the scope or out of scope page.
 - Click the `Add To Scope` button to add the selected web addresses to the Burp Suite scope.
 - To see a quick demo of how to use the extension, please refer to the following GIF:
 
