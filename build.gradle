@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     implementation('net.portswigger.burp.extender:burp-extender-api:2.3')
+    implementation('org.json:json:20240303')
 }
 
 libsDirName = '../@jar'
@@ -19,7 +20,16 @@ libsDirName = '../@jar'
 mainClassName = 'main.java.burp.BurpExtender'
 
 jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+
     manifest {
-        attributes 'Main-Class': "$mainClassName"
+        attributes(
+                'Main-Class': mainClassName
+        )
     }
 }

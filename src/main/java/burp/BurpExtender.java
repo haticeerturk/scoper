@@ -85,10 +85,11 @@ public class BurpExtender implements IBurpExtender, ITab {
         JButton verifyButton = new JButton("Verify");
         verifyButton.setMaximumSize(new Dimension(110, 27));
 
+        Pattern regex = Pattern.compile("(?:(?:https?|ftp):\\/\\/)?(\\*)?[\\w/\\-?=%.]+\\.[\\w/\\-&?=%.]+");
+
         verifyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Pattern regex = Pattern.compile("(?:(?:https?|ftp):\\/\\/)?(\\*)?[\\w/\\-?=%.]+\\.[\\w/\\-&?=%.]+");
                 Matcher regexMatcher = regex.matcher("a.com " + textArea.getText());
 
                 if (regexMatcher.find()) {
